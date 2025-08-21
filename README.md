@@ -1,0 +1,1 @@
+# GKOM-PAYDUNYA
