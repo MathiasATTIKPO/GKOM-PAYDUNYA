@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liste des articles</title>
+</head>
+<body>
+  <h1>Articles disponibles</h1>
+
+  <% articles.forEach(article => { %>
+    <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+      <h3><%= article.name %></h3>
+      <p>Prix : <%= article.price %> F CFA</p>
+      <p>Stock : <%= article.stock %></p>
+
+      <button onclick="openModal('<%= article._id %>', '<%= article.name %>', <%= article.price %>, <%= article.stock %>)">
+        Acheter
+      </button>
+    </div>
+  <% }) %>
+
+  <!-- Modal pour le paiement -->
+  <div id="paymentModal" style="display:none;">
+    <div style="background:#fff; padding:20px; border:1px solid #ccc;">
+      <span style="cursor:pointer;" onclick="closeModal()">[Fermer]</span>
+      <h2 id="modalArticleName"></h2>
+      <p id="modalArticlePrice"></p>
+      <p id="modalArticleStock"></p>
+
+      <form method="POST" action="/order/new">
+        <input type="hidden" name="articleId" id="modalArticleId" />
+        <label>Quantité :</label>
+        <input type="number" name="quantity" min="1" required /><br/><br/>
+
+        <label>Méthode de paiement :</label>
+        <select name="payment_mode" required>
+          <option value="tmoney">Flooz</option>
+          <option value="moov">Mix by Yas</option>
+        </select><br/><br/>
+
+        <label>Numéro de téléphone (8 chiffres) :</label>
+        <input type="text" name="phone" pattern="\d{8}" required /><br/><br/>
+
+        <button type="submit">Payer</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id, name, price, stock) {
+      document.getElementById('paymentModal').style.display = 'block';
+      document.getElementById('modalArticleId').value = id;
+      document.getElementById('modalArticleName').innerText = 'Achat : ' + name;
+      document.getElementById('modalArticlePrice').innerText = 'Prix unitaire : ' + price + ' F CFA';
+      document.getElementById('modalArticleStock').innerText = 'Stock disponible : ' + stock;
+    }
+
+    function closeModal() {
+      document.getElementById('paymentModal').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<%- include('../partials/header') %>
+<h2>Historique des Transactions</h2>
+<ul>
+  <% transactions.forEach(tx => { %>
+    <li><%= tx.amount %> FCFA - <%= tx.status %> - <%= tx.createdAt.toLocaleDateString() %></li>
+  <% }) %>
+</ul>
+<%- include('../partials/footer') %>

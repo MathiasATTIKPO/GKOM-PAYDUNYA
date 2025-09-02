@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<div class="success-container">
+  <div class="success-box">
+    <h2>Paiement Réussi ✅</h2>
+    <p>Merci pour votre transaction.</p>
+    <p>Cette fenêtre va se fermer automatiquement dans quelques secondes...</p>
+  </div>
+</div>
+
+<script>
+  setTimeout(() => {
+    window.close();
+  }, 4000);
+</script>
+
+<%- include('../partials/footer') %>

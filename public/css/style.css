@@ -1,0 +1,411 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff; /* blanc pour contraster */
+  background-image: url('/images/assetGkom.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 150px auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* en haut pour laisser place au logo */
+  height: 100vh;
+  padding-top: 180px; /* espace sous le logo */
+  background-color: #fff; /* fallback */
+}
+
+.form-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+  width: 320px;
+  box-sizing: border-box;
+  text-align: center;
+  border: 3px solid #E30B0B; /* rouge vif comme le logo */
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #1a1a1a; /* presque noir */
+  font-weight: 700;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1.5px solid #333; /* gris foncé */
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-container input:focus {
+  border-color: #E30B0B; /* rouge du logo */
+  outline: none;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #E30B0B; /* rouge vif */
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 700;
+}
+
+.form-container button:hover {
+  background-color: #a20808; /* rouge plus foncé au hover */
+}
+
+.form-container p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-container a {
+  color: #E30B0B;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
+
+
+.welcome-container {
+  text-align: center;
+  padding-top: 100px;
+}
+
+.logo {
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.highlight {
+  color: #2b80ff;
+}
+
+.subtitle {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Animation de chargement */
+.loader {
+  border: 8px solid #eaeaea;
+  border-top: 8px solid #2b80ff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+nav {
+  background-color: #003366;
+  padding: 1em;
+  margin-bottom: 2em;
+}
+
+nav a {
+  color: white;
+  margin-right: 1em;
+  text-decoration: none;
+}
+
+form {
+  background: white;
+  padding: 1.5em;
+  border: 1px solid #ccc;
+  max-width: 500px;
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  margin-top: 1em;
+  padding: 0.5em;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  margin-top: 1em;
+}
+
+th, td {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005599;
+}
+
+.error-messages {
+  background-color: #ffe6e6;
+  color: #cc0000;
+  border: 1px solid #cc0000;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.error-messages ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+
+.form-wrapper {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-wrapper h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .form-wrapper input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  .form-wrapper button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .form-wrapper button:hover {
+    background-color: #1669c1;
+  }
+
+  .open-btn {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .modal-content input,
+  .modal-content button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .modal-content button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    margin-top: 15px;
+  }
+
+  .modal-content .close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 1.5rem;
+    color: #aaa;
+    cursor: pointer;
+  }
+
+  .modal-content .close:hover {
+    color: #000;
+  }
+
+
+  .success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.success-box {
+  text-align: center;
+  background: #f0fff0;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #28a745;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+}
+
+.success-box h2 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.success-box p {
+  color: #333;
+  font-size: 1rem;
+}
+
+
+.failure-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+.failure-box {
+  text-align: center;
+  background: #fff0f0;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #dc3545;
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.3);
+}
+
+.failure-box h2 {
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+
+.failure-box p {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.failure-box button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.failure-box button:hover {
+  background-color: #b02a37;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+  }
+
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: black;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  form input,
+  form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    font-size: 16px;
+  }
