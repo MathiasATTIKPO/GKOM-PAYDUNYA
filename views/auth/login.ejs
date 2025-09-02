@@ -1,0 +1,25 @@
+<%- include('../partials/css') %>
+
+<div class="form-container">
+  <h2>Connexion</h2>
+
+  <% if (errors && errors.length > 0) { %>
+    <div class="error-messages">
+      <ul>
+        <% errors.forEach(error => { %>
+          <li><%= error %></li>
+        <% }) %>
+      </ul>
+    </div>
+  <% } %>
+
+  <form method="POST" action="/auth/login">
+    <input type="email" name="email" placeholder="Email" required value="<%= email %>" />
+    <input type="password" name="password" placeholder="Mot de passe" required />
+    <button type="submit">Se connecter</button>
+  </form>
+  <p><a href="/auth/forgot-password">Mot de passe oublié ?</a></p>
+  <p>Pas encore de compte ? <a href="/auth/register">Créer un compte</a></p>
+</div>
+
+<%- include('../partials/footer') %>

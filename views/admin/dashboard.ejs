@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+<h2>Dashboard Admin</h2>
+<table border="1">
+  <tr>
+    <th>Client</th>
+    <th>Montant</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  <% transactions.forEach(tx => { %>
+    <tr>
+      <td><%= tx.user.email %></td>
+      <td><%= tx.amount %> FCFA</td>
+      <td><%= tx.status %></td>
+      <td>
+        <form method="POST" action="/admin/update/<%= tx._id %>">
+          <select name="status">
+            <option value="pending" <%= tx.status === 'pending' ? 'selected' : '' %>>En attente</option>
+            <option value="validated" <%= tx.status === 'validated' ? 'selected' : '' %>>Validé</option>
+            <option value="rejected" <%= tx.status === 'rejected' ? 'selected' : '' %>>Rejeté</option>
+          </select>
+          <button type="submit">Mettre à jour</button>
+        </form>
+      </td>
+    </tr>
+  <% }) %>
+</table>
+<%- include('../partials/footer') %>

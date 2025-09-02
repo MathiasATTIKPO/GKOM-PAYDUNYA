@@ -1,0 +1,16 @@
+<%- include('../partials/header') %>
+
+<div style="max-width: 600px; margin: 40px auto; text-align: center; font-family: Arial, sans-serif;">
+  <% if (success) { %>
+    <h2 style="color: green;">✅ Succès</h2>
+    <p><%= message || 'Votre paiement a bien été initié.' %></p>
+    <p>Vous recevrez une confirmation dès la validation du paiement.</p>
+    <a href="/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #4caf50; color: white; text-decoration: none; border-radius: 5px;">Retour à l’accueil</a>
+  <% } else { %>
+    <h2 style="color: red;">❌ Erreur</h2>
+    <p><%= message || 'Une erreur est survenue lors du traitement.' %></p>
+    <a href="/" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #f44336; color: white; text-decoration: none; border-radius: 5px;">Retour à l’accueil</a>
+  <% } %>
+</div>
+
+<%- include('../partials/footer') %>
